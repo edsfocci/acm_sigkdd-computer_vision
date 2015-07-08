@@ -1,0 +1,6 @@
+*.pyc
+ENV
+temp/*.pkl
+temp/*.sift
+
+descriptors/haralick.py
