@@ -6,9 +6,11 @@ def compute_harris_response(im, sigma=3):
   """ Compute the Harris corner detector response function
     for each pixel in a graylevel image. """
 
-  # derivatives
+  # Difference of Gaussian used here
+  # derivatives in x-direction
   imx = zeros(im.shape)
   filters.gaussian_filter(im, (sigma,sigma), (0,1), imx)
+  # derivatives in y-direction
   imy = zeros(im.shape)
   filters.gaussian_filter(im, (sigma,sigma), (1,0), imy)
 

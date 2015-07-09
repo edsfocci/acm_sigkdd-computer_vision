@@ -8,8 +8,12 @@ from pylab import *
 im = array(Image.open('../DATA/ceramic-houses_t0.png').convert('L'))
 im_list = [im]
 
+# Using Otsu thresholding
 thresh = mh.thresholding.otsu(im)
+
+# Using Ridler-Calvard thresholding
 # thresh = mh.thresholding.rc(im)
+
 print(thresh)
 im = 1 * (im > thresh)
 im_list.append(im)

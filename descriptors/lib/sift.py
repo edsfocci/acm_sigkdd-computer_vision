@@ -11,9 +11,9 @@ def process_image(image_name, result_name,
     # create a pgm file
     im = Image.open(image_name).convert('L')
     im.save('tmp.pgm')
-    image_name = 'tmp.pgm'
+    image_name_pgm = 'tmp.pgm'
 
-  cmnd = str("sift " + image_name + " --output=" + result_name +
+  cmnd = str("sift " + image_name_pgm + " --output=" + result_name +
               " " + params)
   os.system(cmnd)
   os.remove('tmp.pgm')
